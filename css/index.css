@@ -1,3 +1,204 @@
-/* Use your own code or past solution for Great Idea Web Page CSS here! */
+* {
+    font-color: #3C373B;
+    /* border: 1px solid black; */
+  }
+.container  {
+  width: 1000px;
+  margin: auto;
+}
+h1 {
+  font-family: 'Indie Flower', cursive;
+  margin: 10px;
+  font-size: 60px;
+  text-align: center;
+  color: blue;
+  text-shadow: 1px 1px 2px grey;
+}
 
+h2, h3, h4, h5, h6 {
+  font-family: 'Indie Flower', cursive;
+  margin-bottom: 0;
+  padding: 0 10px;
+  font-size: 30px;
+  color: blue;
+  text-shadow: 1px 1px 2px grey;
+}
 
+p {
+  font-size: 15px;
+  font-family: Gotu;
+  padding: 10px;
+  line-height: 1.4;
+}
+
+img {
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #888888;
+}
+
+.topnav {
+  position: relative;
+  overflow: hidden;
+  background-color: lightcyan;
+}
+
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: cyan;
+  color: black;
+}
+
+.topnav-centered a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topnav-right {
+  float: right;
+}
+
+header img {
+  border-radius: 10px;
+  position: relative;
+  left: 20%;
+}
+
+.content-row {
+  display: flex;
+}
+.swap-a {
+  display: none;
+}
+.swap-b {
+  display: inline;
+}
+
+.contact-section{
+  padding: 0;
+  margin: 0 0 10px 0;
+  border-top: 1px dashed black;
+}
+
+.contact-section address{
+  line-height: 2;
+}
+footer nav {
+  display: flex;
+}
+footer a {
+  margin: 10px;
+  color: black;
+  text-decoration: underline;
+}
+footer nav a:first-child {
+  margin-left: 0;
+}
+a:hover {
+  color: grey
+}
+footer .footer-content .copyright {
+  padding: 20px 0;
+  text-align: center;
+}
+/* Responsive navigation menu 
+(this alows me to set a fixed max width of 1000px, but auto adjust under 1000px) */
+@media screen and (max-width: 1000px) {
+  .container  {
+    width: auto;
+  }
+}
+/* Responsive navigation menu (for smaller devices) */
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 50px;
+  }
+  .topnav {
+    position: relative;
+    overflow: hidden;
+    background-color: lightcyan;
+  }
+  
+  .topnav a {
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  
+  .topnav-centered a {
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .topnav-right {
+    float: right;
+  }
+  header img {
+    border-radius: 10px;
+    position: relative;
+    left: 10%;
+  }
+  
+}
+/* Responsive navigation menu (for mobile devices) */
+@media screen and (max-width: 500px) {
+  .topnav a, .topnav-right {
+    font-size: 15px;
+    float: none;
+    display: block;
+  }
+  .topnav a{
+    padding: 10px 16px;
+  }
+  .topnav-centered a {
+    font-size: 15px;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+
+  h1 {
+
+    font-size: 50px;
+
+  }
+
+  header img {
+    max-width: 475px;
+    border-radius: 10px;
+    position: relative;
+    left: 0%;
+  }
+  .content-row {
+    display: block;
+    border-top: 1px solid cyan;
+    padding-top: 10px;
+  }
+
+  .swap-a {
+    display: inline;
+  }
+  .swap-b {
+    display: none;
+  }
+}
