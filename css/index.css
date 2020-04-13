@@ -1,3 +1,25 @@
+/* CSS reset */
+html, body, div, span, applet, object, iframe,  
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,  
+a, abbr, acronym, address, big, cite, code,  
+del, dfn, em, img, ins, kbd, q, s, samp,  
+small, strike, strong, sub, sup, tt, var,  
+b, u, i, center,  
+dl, dt, dd, ol, ul, li,  
+fieldset, form, label, legend,  
+table, caption, tbody, tfoot, thead, tr, th, td,  
+article, aside, canvas, details, embed,  
+figure, figcaption, footer, header, hgroup,  
+menu, nav, output, ruby, section, summary,  
+time, mark, audio, video {  
+margin: 0;  
+padding: 0;  
+border: 0;  
+font-size: 100%;  
+font: inherit;  
+vertical-align: baseline;  
+}
+
 * {
     font-color: #3C373B;
     /* border: 1px solid black; */
@@ -5,6 +27,8 @@
 .container  {
   width: 1000px;
   margin: auto;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 h1 {
   font-family: 'Indie Flower', cursive;
@@ -40,12 +64,12 @@ img {
   position: relative;
   overflow: hidden;
   background-color: lightcyan;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .topnav a {
-  float: left;
   color: black;
-  text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
@@ -61,32 +85,33 @@ img {
   color: black;
 }
 
-.topnav-centered a {
-  float: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.topnav-right {
-  float: right;
-}
-
 header img {
-  border-radius: 10px;
-  position: relative;
-  left: 20%;
+  max-width: 700px;
+  
 }
 
-.content-row {
+.banner {
+  position: relative;
+  overflow: hidden;
   display: flex;
+  justify-content: space-evenly;
 }
-.swap-a {
-  display: none;
+
+.content-row-left {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 20px 0px;
 }
-.swap-b {
-  display: inline;
+.content-row-right {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px 0px;
 }
 
 .contact-section{
@@ -97,18 +122,19 @@ header img {
 
 .contact-section address{
   line-height: 2;
+  text-align: left;
 }
 footer nav {
+  position: relative;
+  overflow: hidden;
+  background-color: lightcyan;
   display: flex;
+  justify-content: space-evenly;
 }
 footer a {
-  margin: 10px;
-  color: black;
-  text-decoration: underline;
+  text-decoration: none;
 }
-footer nav a:first-child {
-  margin-left: 0;
-}
+
 a:hover {
   color: grey
 }
@@ -122,72 +148,35 @@ footer .footer-content .copyright {
   .container  {
     width: auto;
   }
+  header img {
+    max-width: 500px;
+  }
 }
 /* Responsive navigation menu (for smaller devices) */
 @media screen and (max-width: 800px) {
   h1 {
     font-size: 50px;
-  }
-  .topnav {
-    position: relative;
-    overflow: hidden;
-    background-color: lightcyan;
-  }
-  
-  .topnav a {
-    text-align: center;
-    padding: 10px 16px;
-    text-decoration: none;
-    font-size: 15px;
-  }
-  
-  .topnav-centered a {
-    float: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .topnav-right {
-    float: right;
-  }
-  header img {
-    border-radius: 10px;
-    position: relative;
-    left: 10%;
-  }
-  
+  } 
 }
 /* Responsive navigation menu (for mobile devices) */
 @media screen and (max-width: 500px) {
-  .topnav a, .topnav-right {
-    font-size: 15px;
-    float: none;
-    display: block;
-  }
-  .topnav a{
-    padding: 10px 16px;
-  }
-  .topnav-centered a {
-    font-size: 15px;
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
-  }
 
   h1 {
-
     font-size: 50px;
+  }
 
+  h2 {
+    text-align: center;
+  }
+
+  h3 {
+    text-align: center;
   }
 
   header img {
-    max-width: 475px;
+    max-width: 98%;
     border-radius: 10px;
     position: relative;
-    left: 0%;
   }
   .content-row {
     display: block;
@@ -195,10 +184,20 @@ footer .footer-content .copyright {
     padding-top: 10px;
   }
 
-  .swap-a {
-    display: inline;
+  .content-row-left {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
   }
-  .swap-b {
-    display: none;
+
+  .content-row-right {
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .contact-section address{
+    line-height: 2;
+    text-align: center;
   }
 }
